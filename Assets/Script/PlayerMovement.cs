@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     //reference
     private CharacterController controller;
+    [SerializeField] private FloatingJoystick joystick; 
 
     //parameters
     [SerializeField] private int moveSpeed;
@@ -28,8 +29,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         //input
-        float hInput = Input.GetAxis("Horizontal");
-        float vInput = Input.GetAxis("Vertical");
+        float hInput = joystick.Horizontal;
+        float vInput = joystick.Vertical;
 
         //forward movement
         Vector3 movement = transform.forward * moveSpeed * vInput * Time.deltaTime;
