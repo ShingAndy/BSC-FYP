@@ -256,6 +256,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1364992027543249955, guid: 2e0d8557d937da947b933fce5c65f240,
         type: 3}
+      propertyPath: startBtn
+      value: 
+      objectReference: {fileID: 2877307633938522496}
+    - target: {fileID: 1364992027543249955, guid: 2e0d8557d937da947b933fce5c65f240,
+        type: 3}
       propertyPath: dialogue.name
       value: NPC1
       objectReference: {fileID: 0}
