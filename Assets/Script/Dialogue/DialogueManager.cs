@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
 
     public TMP_Text nameText;
     public TMP_Text dialogueText;
+    public GameObject startBtn;
 
     Animator animator;
 
@@ -64,5 +65,6 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         animator.SetBool("isOpen", false);
+        startBtn.SetActive(true);
     }
 }
