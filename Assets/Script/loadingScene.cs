@@ -7,9 +7,11 @@ using UnityEditor.SceneManagement;
 public class loadingScene : MonoBehaviour
 {
     public Slider loadingSlider;
+    public GameObject loadingUI;
 
     public void LoadScene(int sceneLevel)
     {
+        loadingUI.SetActive(true);
         StartCoroutine(LoadSceneAsync(sceneLevel));
     }
 

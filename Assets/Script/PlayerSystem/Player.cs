@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Player : MonoBehaviour
     private float tastState;
     private float countTime;
     private Vector3 oldPosition;
+    private int sceneLevel;
 
     public Animator savingUI;
 
@@ -23,6 +25,12 @@ public class Player : MonoBehaviour
             hp = PlayerPrefs.GetInt("hp");
             money = PlayerPrefs.GetInt("money");
             tastState = PlayerPrefs.GetFloat("tastState");
+            sceneLevel = PlayerPrefs.GetInt("sceneLevel");
+
+            if(sceneLevel!= SceneManager.GetActiveScene().buildIndex)
+            {
+                FindObjectOfType<loadingScene>().LoadScene(sceneLevel);
+            }
         }
         else
         {
@@ -30,7 +38,8 @@ public class Player : MonoBehaviour
             money = 0;
             tastState = 0;
         }
-        countTime = 30;
+        SaveGame();
+        countTime = 20;
         oldPosition = transform.position;
     }
 
@@ -43,13 +52,13 @@ public class Player : MonoBehaviour
         }
         else if (countTime > 0)
         {
-            countTime = 30;
+            countTime = 20;
             oldPosition = transform.position;
         }
         else
         {
             SaveGame();
-            countTime = 30;
+            countTime = 20;
         }
     }
 
@@ -79,6 +88,7 @@ public class Player : MonoBehaviour
         PlayerPrefs.SetInt("hp", hp);
         PlayerPrefs.SetInt("money", money);
         PlayerPrefs.SetFloat("tastState", tastState);
+        PlayerPrefs.SetInt("sceneLevel", SceneManager.GetActiveScene().buildIndex);
         PlayerPrefs.SetInt("isSaved", 1);
     }
 }
