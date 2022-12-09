@@ -27,7 +27,8 @@ public class Player : MonoBehaviour
             taskState = PlayerPrefs.GetInt("tastState");
             sceneLevel = PlayerPrefs.GetInt("sceneLevel");
 
-            if(sceneLevel!= SceneManager.GetActiveScene().buildIndex)
+            //load the last scene player stay when start game
+            if(sceneLevel!= SceneManager.GetActiveScene().buildIndex && SceneManager.GetActiveScene().buildIndex ==1)
             {
                 FindObjectOfType<loadingScene>().LoadScene(sceneLevel);
             }
