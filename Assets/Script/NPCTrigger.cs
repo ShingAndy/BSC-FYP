@@ -4,27 +4,28 @@ using UnityEngine;
 
 public class NPCTrigger : MonoBehaviour
 {
-    public GameObject talkBtn;
     public GameObject dialogue;
+    public GameObject dialogueStart;
+    public GameObject task;
+    public GameObject tastStart;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-            talkBtn.SetActive(true);
             dialogue.SetActive(true);
+            dialogueStart.SetActive(true);
+            if (task)
+            {
+                Player player = FindObjectOfType<Player>();
+                int tastFinished = player.GetTastState();
+                //if the player already finish or get the task
+                if (task.GetComponentInChildren<TaskManager>().taskOrder <= tastFinished)
+                    return;
+                task.SetActive(true);
+                tastStart.SetActive(true);
+            }
         }
     }
 
@@ -32,8 +33,13 @@ public class NPCTrigger : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            talkBtn.SetActive(false);
             dialogue.SetActive(false);
+            dialogueStart.SetActive(false);
+            if (task)
+            {
+                task.SetActive(false);
+                tastStart.SetActive(false);
+            }
         }
     }
 }

@@ -7,12 +7,14 @@ public class Player : MonoBehaviour
 {
     private int hp;
     private int money;
-    private float tastState;
+    private int tastState;
     private float countTime;
     private Vector3 oldPosition;
     private int sceneLevel;
 
     public Animator savingUI;
+
+    private Task acceptedTask;
 
     void Start()
     {
@@ -24,7 +26,7 @@ public class Player : MonoBehaviour
             //set the data using the saved date
             hp = PlayerPrefs.GetInt("hp");
             money = PlayerPrefs.GetInt("money");
-            tastState = PlayerPrefs.GetFloat("tastState");
+            tastState = PlayerPrefs.GetInt("tastState");
             sceneLevel = PlayerPrefs.GetInt("sceneLevel");
 
             if(sceneLevel!= SceneManager.GetActiveScene().buildIndex)
@@ -65,21 +67,30 @@ public class Player : MonoBehaviour
     public void GetHurt(int hurt)
     {
         hp -= hurt;
+        SaveGame();
     }
 
     public void GetMoney(int money)
     {
         money += money;
+        SaveGame();
     }
 
     public void LostMoney(int money)
     {
         money -= money;
+        SaveGame();
     }
 
-    public void AddTastState(float add)
+    public void SetTastState(int add)
     {
-        tastState += add;
+        tastState = add;
+        SaveGame();
+    }
+
+    public int GetTastState()
+    {
+        return tastState;
     }
 
     public void SaveGame()
@@ -87,8 +98,17 @@ public class Player : MonoBehaviour
         savingUI.Play("saving");
         PlayerPrefs.SetInt("hp", hp);
         PlayerPrefs.SetInt("money", money);
-        PlayerPrefs.SetFloat("tastState", tastState);
+        PlayerPrefs.SetInt("tastState", tastState);
         PlayerPrefs.SetInt("sceneLevel", SceneManager.GetActiveScene().buildIndex);
         PlayerPrefs.SetInt("isSaved", 1);
+    }
+
+    public void resetAll()
+    {
+        hp = 100;
+        money = 0;
+        tastState = 0;
+        sceneLevel = 1;
+        SaveGame();
     }
 }

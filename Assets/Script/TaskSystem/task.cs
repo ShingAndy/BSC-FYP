@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class task
+public class Task
 {
     public string name;
 
@@ -14,10 +14,5 @@ public class task
 
     public int money;
 
-    private bool isFinished = false;
-
-    public void FinishedTask()
-    {
-        isFinished = true;
-    }
+    //public int level;
 }

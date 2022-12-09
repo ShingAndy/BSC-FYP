@@ -24,6 +24,14 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue()
     {
+        //close dialogue if it open
+        TaskManager taskManager;
+        taskManager = FindObjectOfType<TaskManager>();
+        if (taskManager)
+        {
+            taskManager.EndDialogue();
+        }
+
         animator.SetBool("isOpen", true);
 
         nameText.text = dialogue.name;
@@ -61,7 +69,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    void EndDialogue()
+    public void EndDialogue()
     {
         animator.SetBool("isOpen", false);
         startBtn.SetActive(true);
