@@ -13,6 +13,4 @@ public class Task
     public GameObject navPoint;
 
     public int money;
-
-    //public int level;
 }

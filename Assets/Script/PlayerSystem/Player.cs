@@ -7,14 +7,12 @@ public class Player : MonoBehaviour
 {
     private int hp;
     private int money;
-    private int tastState;
+    private int taskState;
     private float countTime;
     private Vector3 oldPosition;
     private int sceneLevel;
 
     public Animator savingUI;
-
-    private Task acceptedTask;
 
     void Start()
     {
@@ -26,7 +24,7 @@ public class Player : MonoBehaviour
             //set the data using the saved date
             hp = PlayerPrefs.GetInt("hp");
             money = PlayerPrefs.GetInt("money");
-            tastState = PlayerPrefs.GetInt("tastState");
+            taskState = PlayerPrefs.GetInt("tastState");
             sceneLevel = PlayerPrefs.GetInt("sceneLevel");
 
             if(sceneLevel!= SceneManager.GetActiveScene().buildIndex)
@@ -38,9 +36,10 @@ public class Player : MonoBehaviour
         {
             hp = 100;
             money = 0;
-            tastState = 0;
+            taskState = 0;
+            sceneLevel = 1;
+            SaveGame();
         }
-        SaveGame();
         countTime = 20;
         oldPosition = transform.position;
     }
@@ -84,13 +83,13 @@ public class Player : MonoBehaviour
 
     public void SetTastState(int add)
     {
-        tastState = add;
+        taskState = add;
         SaveGame();
     }
 
     public int GetTastState()
     {
-        return tastState;
+        return taskState;
     }
 
     public void SaveGame()
@@ -98,8 +97,8 @@ public class Player : MonoBehaviour
         savingUI.Play("saving");
         PlayerPrefs.SetInt("hp", hp);
         PlayerPrefs.SetInt("money", money);
-        PlayerPrefs.SetInt("tastState", tastState);
-        PlayerPrefs.SetInt("sceneLevel", SceneManager.GetActiveScene().buildIndex);
+        PlayerPrefs.SetInt("tastState", taskState);
+        PlayerPrefs.SetInt("sceneLevel", sceneLevel);
         PlayerPrefs.SetInt("isSaved", 1);
     }
 
@@ -107,7 +106,7 @@ public class Player : MonoBehaviour
     {
         hp = 100;
         money = 0;
-        tastState = 0;
+        taskState = 0;
         sceneLevel = 1;
         SaveGame();
     }
