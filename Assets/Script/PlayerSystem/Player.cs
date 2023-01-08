@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 
 public class Player : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class Player : MonoBehaviour
     private int sceneLevel;
 
     public Animator savingUI;
+    private NavMeshAgent navMeshAgent;
+    private CharacterController characterController;
 
     void Start()
     {
@@ -43,6 +46,9 @@ public class Player : MonoBehaviour
         }
         countTime = 20;
         oldPosition = transform.position;
+
+        characterController = GetComponent<CharacterController>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     void Update()
@@ -110,5 +116,17 @@ public class Player : MonoBehaviour
         taskState = 0;
         sceneLevel = 1;
         SaveGame();
+    }
+
+    public void SetNav(Vector3 position)
+    {
+        characterController.enabled = false;
+        navMeshAgent.SetDestination(position);
+    }
+
+    public void StopNav()
+    {
+        characterController.enabled = true;
+        navMeshAgent.ResetPath();
     }
 }

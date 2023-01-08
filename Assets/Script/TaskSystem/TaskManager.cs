@@ -13,6 +13,8 @@ public class TaskManager : MonoBehaviour
     public TMP_Text dialogueText;
     public GameObject startBtn;
 
+    private bool accepted = false;
+
     Animator animator;
 
     // Start is called before the first frame update
@@ -54,11 +56,13 @@ public class TaskManager : MonoBehaviour
         player.SetTastState(taskOrder);
         EndDialogue();
         startBtn.SetActive(false);
+        accepted = true;
     }
 
     public void EndDialogue()
     {
         animator.SetBool("isOpen", false);
-        startBtn.SetActive(true);
+        if(!accepted)
+            startBtn.SetActive(true);
     }
 }

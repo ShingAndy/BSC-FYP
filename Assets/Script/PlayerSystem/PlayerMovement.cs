@@ -32,6 +32,17 @@ public class PlayerMovement : MonoBehaviour
         float hInput = joystick.Horizontal;
         float vInput = joystick.Vertical;
 
+        //if move stop navigation
+        if (hInput != 0 || vInput != 0)
+        {
+            Player player = FindObjectOfType<Player>();
+            player.StopNav();
+        }
+
+        //navigation mode on
+        if (!controller.enabled)
+            return;
+
         //forward movement
         Vector3 movement = transform.forward * moveSpeed * vInput * Time.deltaTime;
         controller.Move(movement);
