@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class loadingScene : MonoBehaviour
 {
@@ -17,7 +17,7 @@ public class loadingScene : MonoBehaviour
 
     IEnumerator LoadSceneAsync(int sceneLevel)
     {
-        AsyncOperation operation = EditorSceneManager.LoadSceneAsync(sceneLevel);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneLevel);
         while (!operation.isDone)
         {
             if (loadingSlider)
