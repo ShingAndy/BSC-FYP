@@ -7,7 +7,7 @@ public class Nav : MonoBehaviour
     public NavMeshAgent agent;
     public float range; 
 
-    public Transform centrePoint; 
+    public Transform centrePoint;
 
     void Start()
     {
@@ -17,12 +17,13 @@ public class Nav : MonoBehaviour
 
     void Update()
     {
-        if (agent.remainingDistance <= agent.stoppingDistance) 
+        //if the nav agent arrived to the point or it stopped by other game objects
+        if (agent.remainingDistance <= agent.stoppingDistance || agent.velocity.magnitude < 0.15f) 
         {
             Vector3 point;
             if (RandomPoint(centrePoint.position, range, out point)) 
             {
-                Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f); 
+                //Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f); 
                 agent.SetDestination(point);
             }
         }

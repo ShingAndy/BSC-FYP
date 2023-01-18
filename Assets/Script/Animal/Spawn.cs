@@ -6,6 +6,8 @@ public class Spawn : MonoBehaviour
 {
     public GameObject animal;
     public int time;
+    public int limited;
+    private int number = 0;
 
     void Start()
     {
@@ -18,7 +20,7 @@ public class Spawn : MonoBehaviour
 
     IEnumerator SpawnAnimal()
     {
-        while(true)
+        while(number < limited)
         {
             Vector3 pos;
             pos.x = Random.Range(-15, 15);

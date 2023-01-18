@@ -299,7 +299,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 20
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -541,6 +541,11 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 3349410196582192933}
+    - target: {fileID: 2002367772510882133, guid: 17ff2004e4accfc41ac8da676ff2dceb,
+        type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2002367772510882134, guid: 17ff2004e4accfc41ac8da676ff2dceb,
         type: 3}
       propertyPath: m_Mesh
