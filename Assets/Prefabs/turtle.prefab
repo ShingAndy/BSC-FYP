@@ -90,10 +90,10 @@ GameObject:
   - component: {fileID: 564677193}
   - component: {fileID: 564677196}
   - component: {fileID: 564677198}
-  - component: {fileID: 564677197}
+  - component: {fileID: 2481053799527768344}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,7 +206,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &564677197
+--- !u!114 &2481053799527768344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -313,7 +313,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 748482666514522809}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.45250952
@@ -413,6 +413,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: animal
+      objectReference: {fileID: 0}
+    - target: {fileID: 8581526665884717702, guid: fd161b06a8b42364d9cddc13151c7305,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8581526665884717725, guid: fd161b06a8b42364d9cddc13151c7305,
         type: 3}
