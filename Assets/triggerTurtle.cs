@@ -5,6 +5,8 @@ using UnityEngine;
 public class triggerTurtle : MonoBehaviour
 {
     public GameObject catchBtn;
+    public GameObject catchBar;
+    private GameObject[] canCatch;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +17,16 @@ public class triggerTurtle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        canCatch = GameObject.FindGameObjectsWithTag("canCatch");
+        if (canCatch.Length > 0)
+        {
+            catchBtn.SetActive(true);
+        }
+        else
+        {
+            catchBtn.SetActive(false);
+            catchBar.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,15 +42,6 @@ public class triggerTurtle : MonoBehaviour
         if (other.tag == "animal")
         {
             other.gameObject.GetComponent<turtle>().nearPlayer(false);
-            catchBtn.SetActive(false);
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.tag == "animal")
-        {
-            catchBtn.SetActive(true);
         }
     }
 }

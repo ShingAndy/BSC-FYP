@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Sound
   - animal
+  - canCatch
   layers:
   - Default
   - TransparentFX
