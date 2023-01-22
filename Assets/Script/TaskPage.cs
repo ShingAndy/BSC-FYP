@@ -18,7 +18,7 @@ public class TaskPage : MonoBehaviour
         {
             Task task = taskList.taskList[player.GetTastState()-1];
             massage.text = task.message;
-            if (task.navPoint)
+            if (task.navPoint && task.navPoint.activeInHierarchy)
             {
                 navBtn.gameObject.SetActive(true);
                 Vector3 destination = task.navPoint.transform.position;

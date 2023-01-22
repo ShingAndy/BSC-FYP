@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 113237826}
   - component: {fileID: 113237828}
   - component: {fileID: 113237827}
+  - component: {fileID: 129123957}
   m_Layer: 5
   m_Name: circle
   m_TagString: canCatch
@@ -76,6 +77,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &129123957
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113237825}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7643ff7b13c1f6d4c9122a44db7d65d1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &564677191
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +222,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7559763522285126157}
   - component: {fileID: 2773823433692339354}
-  - component: {fileID: 18333106369241149}
   - component: {fileID: 2784680543273820785}
   - component: {fileID: 5440810370678988849}
   - component: {fileID: 1024390026}
@@ -245,18 +265,6 @@ MonoBehaviour:
   agent: {fileID: 0}
   range: 8
   centrePoint: {fileID: 231798653862169118}
---- !u!114 &18333106369241149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748482666514522809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 364084365ae1d9b439421d32fe8a13e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!195 &2784680543273820785
 NavMeshAgent:
   m_ObjectHideFlags: 0

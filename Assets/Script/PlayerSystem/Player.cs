@@ -88,9 +88,9 @@ public class Player : MonoBehaviour
         SaveGame();
     }
 
-    public void SetTastState(int add)
+    public void SetTastState(int tast)
     {
-        taskState = add;
+        taskState = tast;
         SaveGame();
     }
 

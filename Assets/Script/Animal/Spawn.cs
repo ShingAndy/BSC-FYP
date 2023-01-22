@@ -18,10 +18,12 @@ public class Spawn : MonoBehaviour
     {
     }
 
+    //keep spawning the animal
     IEnumerator SpawnAnimal()
     {
         while(number < limited)
         {
+            number++;
             Vector3 pos;
             pos.x = Random.Range(-15, 15);
             pos.y = 3;

@@ -787,6 +787,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1543369120403413813, guid: fad49396cd38f4143a7de2647cecb150,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 99
+      objectReference: {fileID: 0}
     - target: {fileID: 1543369120824586541, guid: fad49396cd38f4143a7de2647cecb150,
         type: 3}
       propertyPath: navBtn

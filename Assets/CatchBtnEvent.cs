@@ -8,11 +8,14 @@ public class CatchBtnEvent : MonoBehaviour
 , IEventSystemHandler
 {
     catchTurtleSystem catchTurtleSystem;
+    triggerTurtle triggerTurtle;
 
     private void Start()
     {
         // find the catch turtle system script in the parent game object
         catchTurtleSystem = gameObject.GetComponentInParent<catchTurtleSystem>();
+        // find the trigger turtle script
+        triggerTurtle = FindObjectOfType<triggerTurtle>();
     }
 
     //player start holding the btn
@@ -24,8 +27,7 @@ public class CatchBtnEvent : MonoBehaviour
     //player stop holding the btn
     public void OnPointerUp(PointerEventData eventData)
     {
-        print("stop");
         catchTurtleSystem.setQuit();
-        //StopCoroutine(catchTurtleSystem.Catching());
+        triggerTurtle.playerStopCatching();
     }
 }
