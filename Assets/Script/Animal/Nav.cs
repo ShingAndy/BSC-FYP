@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI; 
 public class Nav : MonoBehaviour 
 {
-    public NavMeshAgent agent;
+    private NavMeshAgent agent;
     public float range; 
 
     public Transform centrePoint;
