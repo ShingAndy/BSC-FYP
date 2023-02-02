@@ -8,7 +8,7 @@ TagManager:
   - animal
   - canCatch
   - arrow
-  - attact
+  - attack
   layers:
   - Default
   - TransparentFX

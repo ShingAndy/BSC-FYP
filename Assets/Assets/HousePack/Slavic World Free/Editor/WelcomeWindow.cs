@@ -23,18 +23,18 @@ public class WelcomeWindow : EditorWindow
         if (EditorApplication.isPlayingOrWillChangePlaymode)
             return;
 
-        OpenWindow();
+        //OpenWindow();
     }
 
     [MenuItem("Tools/EmaceArt/Welcome Window")]
-    private static void OpenWindow()
-    {
-        EditorWindow panel = GetWindow<WelcomeWindow>();
-        panel.titleContent = new GUIContent("Hello Developer!", Resources.Load<Texture2D>("Favi_top"));
-        //  panel.minSize = new Vector2(600, Mathf.Min(Screen.currentResolution.height, 862));
-        // panel.maxSize = new Vector2(600, Mathf.Min(Screen.currentResolution.height, 862));
-        //panel.ShowUtility();
-    }
+    //private static void OpenWindow()
+    //{
+    //    EditorWindow panel = GetWindow<WelcomeWindow>();
+    //    panel.titleContent = new GUIContent("Hello Developer!", Resources.Load<Texture2D>("Favi_top"));
+    //    //  panel.minSize = new Vector2(600, Mathf.Min(Screen.currentResolution.height, 862));
+    //    // panel.maxSize = new Vector2(600, Mathf.Min(Screen.currentResolution.height, 862));
+    //    //panel.ShowUtility();
+    //}
 
     private void OnEnable()
     {

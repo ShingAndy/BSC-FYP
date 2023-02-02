@@ -874,8 +874,8 @@ GameObject:
   - component: {fileID: 821988396817299665}
   - component: {fileID: 8366028263944186}
   m_Layer: 0
-  m_Name: attact
-  m_TagString: attact
+  m_Name: attack
+  m_TagString: attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -906,5 +906,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.22911859, y: 0.34481263, z: 0.38248825}
-  m_Center: {x: 0.066976815, y: 0.32759368, z: 1.3895245}
+  m_Size: {x: 0.23390469, y: 0.38129783, z: 0.40200973}
+  m_Center: {x: 0.060646474, y: 0.3108486, z: 1.3992852}
