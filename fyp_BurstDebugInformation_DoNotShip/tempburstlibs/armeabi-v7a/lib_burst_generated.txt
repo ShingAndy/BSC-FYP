@@ -148,6 +148,7 @@ Library: lib_burst_generated
 --root-assembly=D:\unity\BSC FYP\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Universal.Runtime.dll
 --root-assembly=D:\unity\BSC FYP\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Flow.dll
 --root-assembly=D:\unity\BSC FYP\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Core.dll
+--root-assembly=D:\unity\BSC FYP\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=D:\unity\BSC FYP\Temp\StagingArea\Data\Managed\Unity.TextMeshPro.dll
 --root-assembly=D:\unity\BSC FYP\Temp\StagingArea\Data\Managed\Unity.Burst.dll
 --root-assembly=D:\unity\BSC FYP\Temp\StagingArea\Data\Managed\Unity.RenderPipeline.Universal.ShaderLibrary.dll
@@ -157,7 +158,6 @@ Library: lib_burst_generated
 --root-assembly=D:\unity\BSC FYP\Temp\StagingArea\Data\Managed\Unity.ProBuilder.dll
 --root-assembly=D:\unity\BSC FYP\Temp\StagingArea\Data\Managed\Unity.Timeline.dll
 --root-assembly=D:\unity\BSC FYP\Temp\StagingArea\Data\Managed\Unity.Mathematics.dll
---root-assembly=D:\unity\BSC FYP\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=D:\unity\BSC FYP\Temp\StagingArea\Data\Managed\Unity.TerrainTools.dll
 --root-assembly=D:\unity\BSC FYP\Temp\StagingArea\Data\Managed\Unity.Formats.Fbx.Runtime.dll
 --root-assembly=D:\unity\BSC FYP\Temp\StagingArea\Data\Managed\Unity.ProBuilder.KdTree.dll
