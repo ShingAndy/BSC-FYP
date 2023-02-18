@@ -566,6 +566,16 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 3349410196582192933}
+    - target: {fileID: 1570710053630577362, guid: 17ff2004e4accfc41ac8da676ff2dceb,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1570710053630577362, guid: 17ff2004e4accfc41ac8da676ff2dceb,
+        type: 3}
+      propertyPath: rotateSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1576291283739091440, guid: 17ff2004e4accfc41ac8da676ff2dceb,
         type: 3}
       propertyPath: m_Name
@@ -574,17 +584,37 @@ PrefabInstance:
     - target: {fileID: 2002367771677655716, guid: 17ff2004e4accfc41ac8da676ff2dceb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.2947788
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2002367771677655716, guid: 17ff2004e4accfc41ac8da676ff2dceb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9256978
+      value: 2.78
       objectReference: {fileID: 0}
     - target: {fileID: 2002367771677655716, guid: 17ff2004e4accfc41ac8da676ff2dceb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -27.327961
+      value: -3.4000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002367771677655716, guid: 17ff2004e4accfc41ac8da676ff2dceb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9925336
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002367771677655716, guid: 17ff2004e4accfc41ac8da676ff2dceb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.12197154
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002367771677655716, guid: 17ff2004e4accfc41ac8da676ff2dceb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.0000000042694777
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002367771677655716, guid: 17ff2004e4accfc41ac8da676ff2dceb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -5.2467225e-10
       objectReference: {fileID: 0}
     - target: {fileID: 2002367771703260573, guid: 17ff2004e4accfc41ac8da676ff2dceb,
         type: 3}
@@ -619,12 +649,12 @@ PrefabInstance:
     - target: {fileID: 2002367772877830696, guid: 17ff2004e4accfc41ac8da676ff2dceb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.7799997
+      value: 2.78
       objectReference: {fileID: 0}
     - target: {fileID: 2002367772877830696, guid: 17ff2004e4accfc41ac8da676ff2dceb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.4
+      value: -3.4000006
       objectReference: {fileID: 0}
     - target: {fileID: 2002367772877830696, guid: 17ff2004e4accfc41ac8da676ff2dceb,
         type: 3}
@@ -639,12 +669,12 @@ PrefabInstance:
     - target: {fileID: 2002367772877830696, guid: 17ff2004e4accfc41ac8da676ff2dceb,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000004269478
+      value: 0.0000000042694777
       objectReference: {fileID: 0}
     - target: {fileID: 2002367772877830696, guid: 17ff2004e4accfc41ac8da676ff2dceb,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 5.246723e-10
+      value: -5.2467225e-10
       objectReference: {fileID: 0}
     - target: {fileID: 2002367772877830699, guid: 17ff2004e4accfc41ac8da676ff2dceb,
         type: 3}
@@ -655,7 +685,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2854633138471189215}
     - target: {fileID: 2002367773236237735, guid: 17ff2004e4accfc41ac8da676ff2dceb,
         type: 3}
       propertyPath: m_TrackedObjectOffset.y
@@ -786,6 +816,26 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4958638719317991780}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &6553779744054144726
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2572905412191357776}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: be0a3dbe8693cb34099d9e066f158858, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!195 &7817064335276942430
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -796,7 +846,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -805,7 +855,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 4.7
-  m_BaseOffset: 0
+  m_BaseOffset: -0.3
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!4 &2954110098708419050 stripped

@@ -21,9 +21,12 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 vVelocity = Vector3.zero;
     public LayerMask collideLayer;
 
+    private Animator animator;
+
     void Start()
     {
         controller = gameObject.GetComponent<CharacterController>();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     void Update()
@@ -31,6 +34,10 @@ public class PlayerMovement : MonoBehaviour
         //input
         float hInput = joystick.Horizontal;
         float vInput = joystick.Vertical;
+
+        //as the player walk to the back, the value will be negative
+        float walking = vInput < 0 ? vInput * -1 : vInput;
+        animator.SetFloat("walking", walking);
 
         //if move stop navigation
         if (hInput != 0 || vInput != 0)
@@ -45,6 +52,13 @@ public class PlayerMovement : MonoBehaviour
 
         //forward movement
         Vector3 movement = transform.forward * moveSpeed * vInput * Time.deltaTime;
+
+        //if player running
+        if (walking > 0.7)
+        {
+            movement *= 2f;
+        }
+
         controller.Move(movement);
 
         //rotate movement

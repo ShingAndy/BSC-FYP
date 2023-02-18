@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public Animator savingUI;
     private NavMeshAgent navMeshAgent;
     private CharacterController characterController;
+    private Animator animator;
 
     void Awake()
     {
@@ -49,6 +50,7 @@ public class Player : MonoBehaviour
 
         characterController = GetComponent<CharacterController>();
         navMeshAgent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -122,11 +124,13 @@ public class Player : MonoBehaviour
     {
         characterController.enabled = false;
         navMeshAgent.SetDestination(position);
+        animator.SetBool("naving", true);
     }
 
     public void StopNav()
     {
         characterController.enabled = true;
         navMeshAgent.ResetPath();
+        animator.SetBool("naving", false);
     }
 }
