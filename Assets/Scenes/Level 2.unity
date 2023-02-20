@@ -342,6 +342,7 @@ MonoBehaviour:
   numberText: {fileID: 1261924985}
   aimNumber: 5
   sceneDoor: {fileID: 1293473665}
+  catchNeedTime: 3
   hpBar: {fileID: 2007797831}
 --- !u!4 &41542989 stripped
 Transform:
@@ -7337,17 +7338,17 @@ PrefabInstance:
     - target: {fileID: 6852588871792452544, guid: 75c9c2e46298faf41aac8fdb79302af9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.12197153
+      value: 0.12197154
       objectReference: {fileID: 0}
     - target: {fileID: 6852588871792452544, guid: 75c9c2e46298faf41aac8fdb79302af9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.000000029802322
       objectReference: {fileID: 0}
     - target: {fileID: 6852588871792452544, guid: 75c9c2e46298faf41aac8fdb79302af9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000007450581
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6852588872184945484, guid: 75c9c2e46298faf41aac8fdb79302af9,
         type: 3}
@@ -7372,17 +7373,17 @@ PrefabInstance:
     - target: {fileID: 6852588872184945484, guid: 75c9c2e46298faf41aac8fdb79302af9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.12197153
+      value: 0.12197154
       objectReference: {fileID: 0}
     - target: {fileID: 6852588872184945484, guid: 75c9c2e46298faf41aac8fdb79302af9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.000000029802322
       objectReference: {fileID: 0}
     - target: {fileID: 6852588872184945484, guid: 75c9c2e46298faf41aac8fdb79302af9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000007450581
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6852588872442734594, guid: 75c9c2e46298faf41aac8fdb79302af9,
         type: 3}
@@ -7484,6 +7485,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 4.557478
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817064335276942430, guid: 75c9c2e46298faf41aac8fdb79302af9,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8819792444911770867, guid: 75c9c2e46298faf41aac8fdb79302af9,
         type: 3}

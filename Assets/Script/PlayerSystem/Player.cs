@@ -130,7 +130,16 @@ public class Player : MonoBehaviour
     public void StopNav()
     {
         characterController.enabled = true;
-        navMeshAgent.ResetPath();
+        if (navMeshAgent.hasPath)
+        {
+            navMeshAgent.ResetPath();
+        }
         animator.SetBool("naving", false);
+    }
+
+    public void LookAt(GameObject aim)
+    {
+        characterController.enabled = false;
+        transform.LookAt(aim.transform.position);
     }
 }

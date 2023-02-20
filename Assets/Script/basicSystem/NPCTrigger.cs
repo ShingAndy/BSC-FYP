@@ -11,22 +11,18 @@ public class NPCTrigger : MonoBehaviour
     public GameObject haveTaskIcon;
     private Player player;
     private bool haveTask = false;
-    private bool findNPCTask = false;
     private int tastFinished;
+    private TaskList taskList;
 
     private void Start()
     {
         player = FindObjectOfType<Player>();
-        tastFinished = player.GetTastState();
-        TaskList taskList = FindObjectOfType<TaskList>();
+        taskList = FindObjectOfType<TaskList>();
+    }
 
-        //if the player can get the task or the task is to find this npc
-        if (task.GetComponentInChildren<TaskManager>().taskOrder == tastFinished+1 ||
-            (tastFinished!=0 && taskList.taskList.Length >= tastFinished && taskList.taskList[tastFinished-1].navPoint == gameObject))
-        {
-            haveTaskIcon.SetActive(true);
-            haveTask = true;
-        }
+    private void Update()
+    {
+        CheckHaveTask();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -54,6 +50,23 @@ public class NPCTrigger : MonoBehaviour
                 task.SetActive(false);
                 tastStart.SetActive(false);
             }
+        }
+    }
+
+    private void CheckHaveTask()
+    {
+        tastFinished = player.GetTastState();
+        //if the player can get the task or the task is to find this npc
+        if (task.GetComponentInChildren<TaskManager>().taskOrder == tastFinished + 1 ||
+            (tastFinished != 0 && taskList.taskList.Length >= tastFinished && taskList.taskList[tastFinished - 1].navPoint == gameObject))
+        {
+            haveTaskIcon.SetActive(true);
+            haveTask = true;
+        }
+        else
+        {
+            haveTaskIcon.SetActive(false);
+            haveTask = false;
         }
     }
 }

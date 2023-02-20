@@ -9,7 +9,7 @@ public class triggerTurtle : MonoBehaviour
     public GameObject catchBar;
     private GameObject player;
 
-    //same all turtle that can catch
+    //list of all turtle that can catch
     private List<GameObject> canCatch = new List<GameObject>();
     private GameObject closestTurtle;
 

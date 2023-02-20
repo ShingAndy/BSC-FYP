@@ -15,6 +15,8 @@ public class savingRhinoSystem : MonoBehaviour
     private bool quit = false;
     private triggerRhino triggerRhino;
     public GameObject sceneDoor;
+    public int catchNeedTime;
+    private Player player;
 
     public Slider hpBar;
     private float hp = 100;
@@ -24,7 +26,7 @@ public class savingRhinoSystem : MonoBehaviour
     {
         numberText.text = number + "/" + aimNumber;
         triggerRhino = FindObjectOfType<triggerRhino>();
-
+        player = FindObjectOfType<Player>();
     }
 
     // Update is called once per frame
@@ -32,7 +34,6 @@ public class savingRhinoSystem : MonoBehaviour
     {
         if(number >= aimNumber && !sceneDoor.activeInHierarchy)
         {
-            Player player = FindObjectOfType<Player>();
             player.SetTastState(4);
             sceneDoor.SetActive(true);
         }
@@ -51,14 +52,14 @@ public class savingRhinoSystem : MonoBehaviour
         catchProgress.gameObject.SetActive(true);
         catchProgress.value = 0;
 
-        float waitTime = 3;
         float counter = 0;
 
-        while (counter < waitTime)
+        while (counter < catchNeedTime)
         {
             //Increment Timer until counter >= waitTime
             counter += Time.deltaTime;
-            catchProgress.value = counter/waitTime;
+            catchProgress.value = counter/ catchNeedTime;
+            player.LookAt(catchingTurtle);
             if (quit)
             {
                 //Quit function
@@ -88,7 +89,7 @@ public class savingRhinoSystem : MonoBehaviour
         if (hp <= 0)
         {
             loadingScene loadingScene = FindObjectOfType<loadingScene>();
-            loadingScene.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            loadingScene.LoadScene(1);
             return;
         }
            

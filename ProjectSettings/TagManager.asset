@@ -9,6 +9,7 @@ TagManager:
   - canCatch
   - arrow
   - attack
+  - basic
   layers:
   - Default
   - TransparentFX

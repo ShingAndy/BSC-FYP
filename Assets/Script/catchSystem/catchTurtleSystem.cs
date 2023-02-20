@@ -14,13 +14,15 @@ public class catchTurtleSystem : MonoBehaviour
     private bool quit = false;
     private triggerTurtle triggerTurtle;
     public GameObject sceneDoor;
+    public int catchNeedTime;
+    private Player player;
 
     // Start is called before the first frame update
     void Start()
     {
         numberText.text = number + "/" + aimNumber;
         triggerTurtle = FindObjectOfType<triggerTurtle>();
-
+        player = FindObjectOfType<Player>();
     }
 
     // Update is called once per frame
@@ -28,7 +30,6 @@ public class catchTurtleSystem : MonoBehaviour
     {
         if(number >= aimNumber && !sceneDoor.activeInHierarchy)
         {
-            Player player = FindObjectOfType<Player>();
             player.SetTastState(2);
             sceneDoor.SetActive(true);
         }
@@ -47,14 +48,14 @@ public class catchTurtleSystem : MonoBehaviour
         catchProgress.gameObject.SetActive(true);
         catchProgress.value = 0;
 
-        float waitTime = 3;
         float counter = 0;
 
-        while (counter < waitTime)
+        while (counter < catchNeedTime)
         {
             //Increment Timer until counter >= waitTime
             counter += Time.deltaTime;
-            catchProgress.value = counter/waitTime;
+            catchProgress.value = counter/ catchNeedTime;
+            player.LookAt(catchingTurtle);
             if (quit)
             {
                 //Quit function
