@@ -33,6 +33,11 @@ public class catchTurtleSystem : MonoBehaviour
             player.SetTastState(2);
             sceneDoor.SetActive(true);
         }
+
+        if (!catchBtn.enabled)
+        {
+            setQuit();
+        }
     }
 
     public IEnumerator Catching()
@@ -56,10 +61,12 @@ public class catchTurtleSystem : MonoBehaviour
             counter += Time.deltaTime;
             catchProgress.value = counter/ catchNeedTime;
             player.LookAt(catchingTurtle);
+            player.Catching(true);
             if (quit)
             {
                 //Quit function
                 catchProgress.gameObject.SetActive(false);
+                player.Catching(false);
                 yield break;
             }
             //Wait for a frame so that Unity doesn't freeze
@@ -77,5 +84,6 @@ public class catchTurtleSystem : MonoBehaviour
     public void setQuit()
     {
         quit = true;
+        player.Catching(false);
     }
 }

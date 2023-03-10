@@ -142,4 +142,27 @@ public class Player : MonoBehaviour
         characterController.enabled = false;
         transform.LookAt(aim.transform.position);
     }
+
+    public void Catching(bool yes)
+    {
+        if(yes)
+            animator.SetBool("catching", true);
+        else
+            animator.SetBool("catching", false);
+    }
+
+    public void Hurt()
+    {
+        animator.SetTrigger("hurt");
+    }
+
+    public void Die()
+    {
+        animator.SetTrigger("die");
+    }
+
+    public void Jump()
+    {
+        animator.SetTrigger("jump");
+    }
 }

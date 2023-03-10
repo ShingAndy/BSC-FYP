@@ -20,6 +20,7 @@ public class savingRhinoSystem : MonoBehaviour
 
     public Slider hpBar;
     private float hp = 100;
+    private bool isDead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -41,11 +42,11 @@ public class savingRhinoSystem : MonoBehaviour
 
     public IEnumerator Catching()
     {
-        if (number >= aimNumber)
+        if (number >= aimNumber || isDead)
             yield break;
 
         //set the catch target
-        GameObject catchingTurtle = triggerRhino.getCloestTurtle();
+        GameObject savingRhino = triggerRhino.getCloestTurtle();
 
         //reset valuable
         quit = false;
@@ -59,11 +60,13 @@ public class savingRhinoSystem : MonoBehaviour
             //Increment Timer until counter >= waitTime
             counter += Time.deltaTime;
             catchProgress.value = counter/ catchNeedTime;
-            player.LookAt(catchingTurtle);
+            player.LookAt(savingRhino);
+            player.Catching(true);
             if (quit)
             {
                 //Quit function
                 catchProgress.gameObject.SetActive(false);
+                player.Catching(false);
                 yield break;
             }
             //Wait for a frame so that Unity doesn't freeze
@@ -71,8 +74,8 @@ public class savingRhinoSystem : MonoBehaviour
         }
 
         //success catching
-        triggerRhino.destroyedTurtle(catchingTurtle);
-        catchingTurtle.GetComponent<Rhino>().DestroyObject();
+        triggerRhino.destroyedTurtle(savingRhino);
+        savingRhino.GetComponent<Rhino>().DestroyObject();
         number++;
         numberText.text = number + "/" + aimNumber;
         catchProgress.gameObject.SetActive(false);
@@ -81,19 +84,32 @@ public class savingRhinoSystem : MonoBehaviour
     public void setQuit()
     {
         quit = true;
+        player.Catching(false);
     }
 
     public void getHurt(int damage)
     {
+        //player already died
+        if (isDead)
+            return;
+
         //if hp is 0, player died and reload the scense
         if (hp <= 0)
         {
-            loadingScene loadingScene = FindObjectOfType<loadingScene>();
-            loadingScene.LoadScene(1);
+            isDead = true;
+            player.Die();
+            Invoke("gameOver", 2f);
             return;
         }
-           
+
+        player.Hurt();
         hp -= damage;
         hpBar.value = hp/100;
+    }
+
+    private void gameOver()
+    {
+        loadingScene loadingScene = FindObjectOfType<loadingScene>();
+        loadingScene.LoadScene(1);
     }
 }

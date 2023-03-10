@@ -72,15 +72,20 @@ public class PlayerMovement : MonoBehaviour
             vVelocity.y = 0;
         }
 
-        if(isGround&&Input.GetButtonDown("Jump"))
-        {
-            vVelocity.y += Mathf.Sqrt(jump * -2 * gravity);
-        }
+
 
         //gravity
         vVelocity.y += gravity * Time.deltaTime;
         controller.Move(vVelocity * Time.deltaTime);
         
 
+    }
+
+    public void Jump()
+    {
+        if (isGround)
+        {
+            vVelocity.y += Mathf.Sqrt(jump * -1 * gravity);
+        }
     }
 }
