@@ -79,6 +79,7 @@ public class savingRhinoSystem : MonoBehaviour
         number++;
         numberText.text = number + "/" + aimNumber;
         catchProgress.gameObject.SetActive(false);
+        setQuit();
     }
 
     public void setQuit()

@@ -48,12 +48,12 @@ public class triggerRhino : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "animal")
-        {
-            //to show the green circle ui
-            other.gameObject.GetComponent<Rhino>().nearPlayer(true);
-            if (!canCatch.Contains(other.gameObject)) { canCatch.Add(other.gameObject); }
-        }
+        //if (other.tag == "animal")
+        //{
+        //    //to show the green circle ui
+        //    other.gameObject.GetComponent<Rhino>().nearPlayer(true);
+        //    if (!canCatch.Contains(other.gameObject)) { canCatch.Add(other.gameObject); }
+        //}
 
         if (other.tag == "attack")
         {
@@ -69,6 +69,16 @@ public class triggerRhino : MonoBehaviour
             //to not show the green circle ui
             other.gameObject.GetComponent<Rhino>().nearPlayer(false);
             canCatch.Remove(other.gameObject);
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "animal")
+        {
+            //to show the green circle ui
+            other.gameObject.GetComponent<Rhino>().nearPlayer(true);
+            if (!canCatch.Contains(other.gameObject)) { canCatch.Add(other.gameObject); }
         }
     }
 

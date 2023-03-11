@@ -140,7 +140,9 @@ public class Player : MonoBehaviour
     public void LookAt(GameObject aim)
     {
         characterController.enabled = false;
-        transform.LookAt(aim.transform.position);
+        Quaternion rotation = Quaternion.LookRotation(aim.transform.position - transform.position, Vector3.up);
+        transform.rotation = rotation;
+        //transform.LookAt(aim.transform.position);
     }
 
     public void Catching(bool yes)
@@ -159,10 +161,5 @@ public class Player : MonoBehaviour
     public void Die()
     {
         animator.SetTrigger("die");
-    }
-
-    public void Jump()
-    {
-        animator.SetTrigger("jump");
     }
 }

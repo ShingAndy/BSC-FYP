@@ -422,12 +422,12 @@ PrefabInstance:
     - target: {fileID: 6852588871792452544, guid: 12cf1bb1a2343364c862d5fd87e6b857,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000002386915
+      value: -0.00000002386915
       objectReference: {fileID: 0}
     - target: {fileID: 6852588871792452544, guid: 12cf1bb1a2343364c862d5fd87e6b857,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000047310342
+      value: 0.0000000047310342
       objectReference: {fileID: 0}
     - target: {fileID: 6852588872184945484, guid: 12cf1bb1a2343364c862d5fd87e6b857,
         type: 3}
@@ -447,13 +447,43 @@ PrefabInstance:
     - target: {fileID: 6852588872184945484, guid: 12cf1bb1a2343364c862d5fd87e6b857,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000002386915
+      value: -0.00000002386915
       objectReference: {fileID: 0}
     - target: {fileID: 6852588872184945484, guid: 12cf1bb1a2343364c862d5fd87e6b857,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000047310342
+      value: 0.0000000047310342
       objectReference: {fileID: 0}
+    - target: {fileID: 6852588872442734594, guid: 12cf1bb1a2343364c862d5fd87e6b857,
+        type: 3}
+      propertyPath: taskList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6852588872442734594, guid: 12cf1bb1a2343364c862d5fd87e6b857,
+        type: 3}
+      propertyPath: taskList.Array.data[1].name
+      value: Task 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6852588872442734594, guid: 12cf1bb1a2343364c862d5fd87e6b857,
+        type: 3}
+      propertyPath: taskList.Array.data[0].message
+      value: Try to catch 10 turtles
+      objectReference: {fileID: 0}
+    - target: {fileID: 6852588872442734594, guid: 12cf1bb1a2343364c862d5fd87e6b857,
+        type: 3}
+      propertyPath: taskList.Array.data[1].message
+      value: Go back to village
+      objectReference: {fileID: 0}
+    - target: {fileID: 6852588872442734594, guid: 12cf1bb1a2343364c862d5fd87e6b857,
+        type: 3}
+      propertyPath: taskList.Array.data[0].navPoint
+      value: 
+      objectReference: {fileID: 1293473665}
+    - target: {fileID: 6852588872442734594, guid: 12cf1bb1a2343364c862d5fd87e6b857,
+        type: 3}
+      propertyPath: taskList.Array.data[1].navPoint
+      value: 
+      objectReference: {fileID: 1293473665}
     - target: {fileID: 8819792444911770867, guid: 12cf1bb1a2343364c862d5fd87e6b857,
         type: 3}
       propertyPath: m_Name
@@ -1319,7 +1349,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!1001 &1481386252
 PrefabInstance:
@@ -1957,7 +1987,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1966329742
 RectTransform:
   m_ObjectHideFlags: 0

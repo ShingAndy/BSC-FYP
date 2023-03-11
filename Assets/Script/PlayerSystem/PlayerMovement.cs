@@ -6,7 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     //reference
     private CharacterController controller;
-    [SerializeField] private FloatingJoystick joystick; 
+    [SerializeField] private FloatingJoystick joystickY;
+    [SerializeField] private FloatingJoystick joystickX;
 
     //parameters
     [SerializeField] private int moveSpeed;
@@ -22,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask collideLayer;
 
     private Animator animator;
+    private bool isJump = false;
 
     void Start()
     {
@@ -32,8 +34,9 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         //input
-        float hInput = joystick.Horizontal;
-        float vInput = joystick.Vertical;
+        //if the player use right joystick to rotate, use the value of right joystick
+        float hInput = joystickX.Horizontal == 0 ? joystickY.Horizontal : joystickX.Horizontal;
+        float vInput = joystickY.Vertical;
 
         //as the player walk to the back, the value will be negative
         float walking = vInput < 0 ? vInput * -1 : vInput;
@@ -83,9 +86,17 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-        if (isGround)
+        if (isGround && !isJump)
         {
-            vVelocity.y += Mathf.Sqrt(jump * -1 * gravity);
+            isJump = true;
+            animator.SetTrigger("jump");
+            Invoke("SetJump", 0.5f);
         }
+    }
+
+    private void SetJump()
+    {
+        vVelocity.y += Mathf.Sqrt(jump * -1 * gravity);
+        isJump = false;
     }
 }
