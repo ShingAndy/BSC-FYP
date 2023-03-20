@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //input
         //if the player use right joystick to rotate, use the value of right joystick
-        float hInput = joystickX.Horizontal == 0 ? joystickY.Horizontal : joystickX.Horizontal;
+        float hInput = joystickX.Horizontal == 0 ? joystickY.Horizontal : joystickX.Horizontal*1.4f;
         float vInput = joystickY.Vertical;
 
         //as the player walk to the back, the value will be negative
