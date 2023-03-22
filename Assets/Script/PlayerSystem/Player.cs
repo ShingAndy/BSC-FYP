@@ -18,6 +18,9 @@ public class Player : MonoBehaviour
     private CharacterController characterController;
     private Animator animator;
 
+    public AudioClip[] sounds;
+    private AudioSource audioSource;
+
     void Awake()
     {
         //PlayerPrefs can't save boolean
@@ -51,6 +54,7 @@ public class Player : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -156,10 +160,18 @@ public class Player : MonoBehaviour
     public void Hurt()
     {
         animator.SetTrigger("hurt");
+        audioSource.clip = sounds[0];
+        audioSource.Play();
+        Invoke("StopSound", 0.5f);
     }
 
     public void Die()
     {
         animator.SetTrigger("die");
+    }
+
+    private void StopSound()
+    {
+        audioSource.Stop();
     }
 }

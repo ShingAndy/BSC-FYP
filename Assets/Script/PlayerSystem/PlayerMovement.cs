@@ -25,10 +25,14 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     private bool isJump = false;
 
+    public AudioClip[] sounds;
+    private AudioSource audioSource;
+
     void Start()
     {
         controller = gameObject.GetComponent<CharacterController>();
         animator = gameObject.GetComponent<Animator>();
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -64,26 +68,34 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(movement);
 
+        //manage the sound effect of walking
+        if (vInput > 0 && !audioSource.isPlaying)
+        {
+            audioSource.clip = sounds[0];
+            audioSource.Play();
+        }
+        else if (vInput == 0 && audioSource.clip == sounds[0])
+        {
+            audioSource.Pause();
+        }
+
         //rotate movement
         transform.Rotate(Vector3.up * hInput * rotateSpeed);
 
         //check ground
         isGround = Physics.CheckSphere(groundCheck.position, checkGroundRadius, collideLayer);
 
-        if (isGround && vVelocity.y < 0)
+        if (isGround && vVelocity.y < -5)
         {
             vVelocity.y = 0;
         }
 
-
-
         //gravity
         vVelocity.y += gravity * Time.deltaTime;
         controller.Move(vVelocity * Time.deltaTime);
-        
-
     }
 
+    //set the jump function
     public void Jump()
     {
         if (isGround && !isJump)
@@ -97,6 +109,23 @@ public class PlayerMovement : MonoBehaviour
     private void SetJump()
     {
         vVelocity.y += Mathf.Sqrt(jump * -1 * gravity);
-        isJump = false;
+    }
+
+
+    //set the drop sound after jump
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.layer == 6 && isJump)
+        {
+            isJump = false;
+            audioSource.clip = sounds[1];
+            audioSource.Play();
+            Invoke("StopSound", 0.1f);
+        }
+    }
+
+    private void StopSound()
+    {
+        audioSource.Stop();
     }
 }
