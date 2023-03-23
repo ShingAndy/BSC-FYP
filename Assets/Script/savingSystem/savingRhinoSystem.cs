@@ -22,6 +22,9 @@ public class savingRhinoSystem : MonoBehaviour
     private float hp = 100;
     private bool isDead = false;
 
+    public DialogueManager levelMsg;
+    private bool isShowMsg = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,10 +36,23 @@ public class savingRhinoSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(number >= aimNumber && !sceneDoor.activeInHierarchy)
+        //show level msg
+        if(number == 0 && !isShowMsg && levelMsg)
+        {
+            isShowMsg = true;
+            levelMsg.StartDialogue();
+        }
+
+        //finished the task
+        if (number >= aimNumber && !sceneDoor.activeInHierarchy)
         {
             player.SetTastState(4);
             sceneDoor.SetActive(true);
+        }
+
+        if (!catchBtn.enabled)
+        {
+            setQuit();
         }
     }
 
