@@ -10,6 +10,8 @@ TagManager:
   - arrow
   - attack
   - basic
+  - Rock
+  - Destroy
   layers:
   - Default
   - TransparentFX
