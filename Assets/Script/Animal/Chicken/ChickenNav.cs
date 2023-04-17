@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class ChickenNav : MonoBehaviour
 {
-    public Transform playerTransform;
+    private Transform playerTransform;
     NavMeshAgent agent;
 
     public float speed = 3f;
@@ -14,17 +14,14 @@ public class ChickenNav : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
-
-
     }
 
     void Update()
     {
-        playerTransform = GameObject.Find("Player").transform;
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
         //get chicken and player distance
         float distance = Vector3.Distance(transform.position, playerTransform.position);
-        Debug.Log(distance);
 
         //follow player
         if (distance < range)

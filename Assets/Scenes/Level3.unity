@@ -718,6 +718,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1751424851}
+    - target: {fileID: 7146409751303136410, guid: 48fa8ae881dee8543b59cdba7680a291,
+        type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 637230067}
     - target: {fileID: 7297168165609869823, guid: 48fa8ae881dee8543b59cdba7680a291,
         type: 3}
       propertyPath: m_PolyMesh.m_Mesh
@@ -2686,6 +2691,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2050354687}
+    - target: {fileID: 7146409751303136410, guid: 48fa8ae881dee8543b59cdba7680a291,
+        type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 637230067}
     - target: {fileID: 7297168165609869823, guid: 48fa8ae881dee8543b59cdba7680a291,
         type: 3}
       propertyPath: m_PolyMesh.m_Mesh
@@ -8518,6 +8528,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 256412458}
+    - target: {fileID: 7146409751303136410, guid: 48fa8ae881dee8543b59cdba7680a291,
+        type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 637230067}
     - target: {fileID: 7297168165609869823, guid: 48fa8ae881dee8543b59cdba7680a291,
         type: 3}
       propertyPath: m_PolyMesh.m_Mesh
