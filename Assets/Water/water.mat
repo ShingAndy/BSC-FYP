@@ -121,8 +121,8 @@ Material:
     - _ZWrite: 1
     - _depth: 7.23
     - _reflectionScale: 1.91
-    - _reflectionSpeed: 0.05
-    - _reflectionStrength: 1.37
+    - _reflectionSpeed: 0.1
+    - _reflectionStrength: 1.5
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
