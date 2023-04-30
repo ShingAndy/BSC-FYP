@@ -2146,7 +2146,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 99
+  m_SortingOrder: 200
   m_TargetDisplay: 0
 --- !u!114 &6852588872721293867
 MonoBehaviour:
@@ -2203,7 +2203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6852588872734442479
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3904,54 +3904,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e7c931afd03fb24885b0eac4440d38f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2572905412191357776 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7450172538693020212, guid: 17ff2004e4accfc41ac8da676ff2dceb,
-    type: 3}
-  m_PrefabInstance: {fileID: 4958638719317991780}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &6553779744054144726
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2572905412191357776}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: be0a3dbe8693cb34099d9e066f158858, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &7817064335276942430
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2572905412191357776}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 6
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 4.7
-  m_BaseOffset: -0.3
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!114 &2953764899358765480 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7795025214847946956, guid: 17ff2004e4accfc41ac8da676ff2dceb,
